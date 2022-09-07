@@ -292,7 +292,7 @@ export const Scanner: FC = () => {
     };
 
     const processCameraFeed = () => {
-        if (video.current.readyState === video.current.HAVE_ENOUGH_DATA) {
+        if (scannerActive && video.current.readyState === video.current.HAVE_ENOUGH_DATA) {
             console.log("TICK DOING");
 
             let draw2d = canvas.current.getContext("2d");
