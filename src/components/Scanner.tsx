@@ -129,7 +129,7 @@ export const Scanner: FC = () => {
 
                 // Attempt to verify & check in
                 setVerifyQrTicket(prev => {
-                    return prev ? prev : qrTicket
+                    return prev ? undefined : qrTicket // Should that be prev or undefined - can not scan same twice if prev
                 });
             }
 
@@ -214,7 +214,7 @@ export const Scanner: FC = () => {
         }
 
         // Ticket owner must match expected
-        if (!errorText && ticket && ticket.owner !== attendee.publicKey) {
+        if (!errorText && ticket && ticket.owner.toBase58() !== attendee.publicKey.toBase58()) {
             errorText = "Ticket data is invalid!";
         }
 
