@@ -10,7 +10,7 @@ import NodeWalletClone from "./nodeWalletClone";
 
 
 const textEncoder = new TextEncoder();
-const RPC_URL = "http://localhost:8899"; // https://api.devnet.solana.com
+const RPC_URL = "https://api.devnet.solana.com"; // https://api.devnet.solana.com http://localhost:8899
 
 
 // Notification functions
